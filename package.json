@@ -1,0 +1,8 @@
+{
+  "name": "app.hofsaknust.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/godfredcs/app.hofsaknust.com.git",
+  "author": "godfredcs <addaiz.godfred@gmail.com>",
+  "license": "MIT"
+}
