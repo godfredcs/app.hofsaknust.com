@@ -5,8 +5,7 @@
         <div class="account-container">
             <div class="content clearfix">
 
-                <form action="#" method="post">
-
+                <form>
                     <div class="login-fields">
                         <p>Please provide your log in details</p>
 
@@ -28,7 +27,7 @@
                             <label class="choice" for="Field">Keep me logged in</label>
                         </span>
 
-                        <button class="button btn btn-large">Log In</button>
+                        <button class="button btn btn-large" @click="attemptLogin()">Log In</button>
                     </div> <!-- .actions -->
 
                 </form>
@@ -45,7 +44,14 @@
 
 <script>
 export default {
-    name: 'Login'
+	name: 'Login',
+
+	methods: {
+		attemptLogin() {
+			console.log('this is exciting')
+			this.$router.push({ name: 'Timeline' });
+		}
+	}
 }
 </script>
 
