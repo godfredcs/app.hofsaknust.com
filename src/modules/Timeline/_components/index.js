@@ -1,6 +1,10 @@
 
 import Main from './Main';
+import Trending from './Trending';
+import Users from './Users';
 
 export {
-    Main
+    Main,
+    Trending,
+    Users
 };

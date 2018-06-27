@@ -5,29 +5,29 @@
         <div class="account-container">
             <div class="content clearfix">
 
-                <form>
+                <form @submit.prevent="attemptLogin()">
                     <div class="login-fields">
                         <p>Please provide your log in details</p>
 
                         <div class="field">
                             <label for="username">Username</label>
-                            <input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
+                            <input type="text" id="username" name="username" v-model="username" placeholder="Username" class="login username-field" />
                         </div> <!-- /field -->
 
                         <div class="field">
                             <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field"/>
+                            <input type="password" id="password" name="password" v-model="password" placeholder="Password" class="login password-field"/>
                         </div> <!-- /password -->
 
                     </div> <!-- /login-fields -->
 
                     <div class="login-actions">
                         <span class="login-checkbox">
-                            <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+                            <input id="Field" name="Field" type="checkbox" class="field login-checkbox" v-model="keep_logged_in" tabindex="4" />
                             <label class="choice" for="Field">Keep me logged in</label>
                         </span>
 
-                        <button class="button btn btn-large" @click="attemptLogin()">Log In</button>
+                        <button class="button btn btn-large">Log In</button>
                     </div> <!-- .actions -->
 
                 </form>
@@ -46,9 +46,17 @@
 export default {
 	name: 'Login',
 
+    data() {
+        return {
+            username: '',
+            password: '',
+            keep_logged_in: false
+        };
+    },
+
 	methods: {
 		attemptLogin() {
-			console.log('this is exciting')
+            console.log('this is the object ', { username: this.username, password: this.password, keep_logged_in: this.keep_logged_in });
 			this.$router.push({ name: 'Timeline' });
 		}
 	}

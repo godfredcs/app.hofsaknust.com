@@ -11,39 +11,39 @@
 
                             <div class="field">
                                 <label for="firstname">First Name:</label>
-                                <input type="text" id="firstname" name="firstname" value="" placeholder="First Name" class="login" />
+                                <input type="text" id="firstname" name="firstname" v-model="firstname" placeholder="First Name" class="login" />
                             </div> <!-- /field -->
 
                             <div class="field">
                                 <label for="lastname">Last Name:</label>
-                                <input type="text" id="lastname" name="lastname" value="" placeholder="Last Name" class="login" />
+                                <input type="text" id="lastname" name="lastname" v-model="lastname" placeholder="Last Name" class="login" />
                             </div> <!-- /field -->
 
                             <div class="field">
                                 <label for="username">Username:</label>
-                                <input type="text" id="username" name="username" value="" placeholder="Username" class="login" />
+                                <input type="text" id="username" name="username" v-model="username" placeholder="Username" class="login" />
                             </div> <!-- /field -->
 
                             <div class="field">
                                 <label for="email">Email Address:</label>
-                                <input type="text" id="email" name="email" value="" placeholder="Email" class="login"/>
+                                <input type="text" id="email" name="email" v-model="email" placeholder="Email" class="login"/>
                             </div> <!-- /field -->
 
                             <div class="field">
                                 <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" value="" placeholder="Password" class="login"/>
+                                <input type="password" id="password" name="password" v-model="password" placeholder="Password" class="login"/>
                             </div> <!-- /field -->
 
                             <div class="field">
                                 <label for="confirm_password">Confirm Password:</label>
-                                <input type="password" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" class="login"/>
+                                <input type="password" id="confirm_password" name="confirm_password" v-model="confirm_password" placeholder="Confirm Password" class="login"/>
                             </div> <!-- /field -->
 
                         </div> <!-- /login-fields -->
 
                         <div class="login-actions">
                             <span class="login-checkbox">
-                                <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+                                <input id="Field" name="Field" type="checkbox" class="field login-checkbox" v-model="agree" tabindex="4" />
                                 <label class="choice" for="Field">Agree with the Terms & Conditions.</label>
                             </span>
 
@@ -66,7 +66,19 @@
 
 <script>
 export default {
-    name: 'Register'
+    name: 'Register',
+
+    data() {
+        return {
+            firstname: '',
+            lastname: '',
+            username: '',
+            email: '',
+            password: '',
+            confirm_password: '',
+            agree: false
+        }
+    }
 }
 </script>
 
